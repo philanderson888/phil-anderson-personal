@@ -72,3 +72,13 @@ export const portfolioItems: PortfolioItem[] = [
     link: 'https://github.com/philanderson888'
   }
 ];
+
+export const archivedItems: PortfolioItem[] = [
+  {
+    id: 'legacy-project',
+    title: 'Legacy Project',
+    description: 'A placeholder for archived projects. This section contains older work that, while no longer actively maintained, demonstrates the evolution of my development journey.',
+    tags: ['Archive', 'Legacy'],
+    archived: true
+  }
+];
