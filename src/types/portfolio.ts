@@ -15,4 +15,5 @@ export interface PortfolioItem {
     challenges?: string[];
     solutions?: string[];
   };
+  archived?: boolean;
 }
