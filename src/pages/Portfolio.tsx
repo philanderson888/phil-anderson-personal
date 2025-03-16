@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ExternalLink, Github, CheckCircle2, ArrowRight } from 'lucide-react';
+import { ExternalLink, Github, CheckCircle2, ArrowRight, Archive } from 'lucide-react';
 import { portfolioItems } from '../data/portfolio';
 
 function PortfolioCard({ item }: { item: typeof portfolioItems[0] }) {
@@ -185,12 +185,30 @@ export function Portfolio() {
   }
 
   return (
-    <div className="space-y-8">
-      <h1 className="text-3xl font-bold text-warm-900">Portfolio</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {portfolioItems.map((item) => (
-          <PortfolioCard key={item.id} item={item} />
-        ))}
+    <div className="space-y-12">
+      <div className="space-y-8">
+        <h1 className="text-3xl font-bold text-warm-900">Portfolio</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {portfolioItems.map((item) => (
+            <PortfolioCard key={item.id} item={item} />
+          ))}
+        </div>
+      </div>
+
+      <div className="border-t border-warm-200 pt-12">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-2xl font-semibold text-warm-900">Archive</h2>
+          <Link
+            to="/archive"
+            className="flex items-center gap-2 text-warm-600 hover:text-warm-900 transition-colors"
+          >
+            <Archive size={20} />
+            <span>View All Archives</span>
+          </Link>
+        </div>
+        <p className="text-warm-600 mb-8">
+          Explore my past projects and earlier work in the archive section.
+        </p>
       </div>
     </div>
   );
