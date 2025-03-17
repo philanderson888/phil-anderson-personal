@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Instagram, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function Home() {
   return (
@@ -63,14 +64,17 @@ export function Home() {
           Featured Work
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white rounded-lg shadow-sm p-6 transition-all duration-300 hover:shadow-md">
+          <Link 
+            to="/portfolio" 
+            className="bg-white rounded-lg shadow-sm p-6 transition-all duration-300 hover:shadow-md"
+          >
             <h3 className="text-lg font-medium text-warm-900 mb-2">
               Web Development
             </h3>
             <p className="text-warm-600">
               Creating modern, responsive web applications using React, TypeScript, and other cutting-edge technologies.
             </p>
-          </div>
+          </Link>
         </div>
       </section>
     </div>
