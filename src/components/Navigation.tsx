@@ -1,9 +1,9 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu } from 'lucide-react';
+import { useState } from 'react';
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { path: '/', label: 'Home' },
@@ -44,6 +44,7 @@ export function Navigation() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-warm-600 hover:text-warm-900"
+              aria-label="Toggle menu"
             >
               <Menu size={24} />
             </button>
