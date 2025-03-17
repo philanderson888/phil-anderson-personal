@@ -43,19 +43,23 @@ export function Home() {
 
       {/* About Section */}
       <section className="max-w-3xl mx-auto">
-        <h2 className="text-2xl font-semibold text-warm-900 mb-4">
-          <Link to="/about" className="hover:text-warm-700 transition-colors">About Me</Link>
-        </h2>
-        <p className="text-warm-600 mb-4">
-          I'm a passionate software engineer with a deep enthusiasm for modern web development
-          and technology. My journey in software development has been driven by a constant
-          desire to learn and create meaningful solutions that make a difference.
-        </p>
-        <p className="text-warm-600">
-          Beyond coding, I'm actively involved in my local church community and various
-          charitable initiatives. I believe in using technology as a force for positive
-          change, combining technical expertise with a commitment to helping others.
-        </p>
+        <Link to="/about" className="block group">
+          <h2 className="text-2xl font-semibold text-warm-900 mb-4 group-hover:text-warm-700 transition-colors">
+            About Me
+          </h2>
+          <div className="space-y-4 text-warm-600 group-hover:text-warm-700 transition-colors">
+            <p>
+              I'm a passionate software engineer with a deep enthusiasm for modern web development
+              and technology. My journey in software development has been driven by a constant
+              desire to learn and create meaningful solutions that make a difference.
+            </p>
+            <p>
+              Beyond coding, I'm actively involved in my local church community and various
+              charitable initiatives. I believe in using technology as a force for positive
+              change, combining technical expertise with a commitment to helping others.
+            </p>
+          </div>
+        </Link>
       </section>
 
       {/* Featured Work Preview */}
