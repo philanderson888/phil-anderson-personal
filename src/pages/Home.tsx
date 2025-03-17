@@ -44,7 +44,7 @@ export function Home() {
       {/* About Section */}
       <section className="max-w-3xl mx-auto">
         <h2 className="text-2xl font-semibold text-warm-900 mb-4">
-          About Me
+          <Link to="/about" className="hover:text-warm-700 transition-colors">About Me</Link>
         </h2>
         <p className="text-warm-600 mb-4">
           I'm a passionate software engineer with a deep enthusiasm for modern web development
