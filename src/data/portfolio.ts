@@ -58,6 +58,62 @@ export const portfolioItems: PortfolioItem[] = [
     }
   },
   {
+    id: 'jesus-is-lord',
+    title: 'Jesus Is Lord - Christian Clothing Store',
+    shortDescription: 'A modern e-commerce platform offering Christian-themed clothing and accessories, built in collaboration with family.',
+    description: 'Jesus Is Lord is a faith-focused clothing store that combines style with Christian values. This e-commerce platform offers a curated collection of Christian-themed clothing including t-shirts, hoodies, and accessories. Built using Wix\'s advanced e-commerce capabilities, the store provides a seamless shopping experience while spreading the message of faith.',
+    primaryImage: 'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/jesus-is-lord-home-page-01.png',
+    imageUrls: [
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/jesus-is-lord-home-page-01.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/jesus-is-lord-all-products.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/jesus-is-lord-all-womens.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/jesus-is-lord-product-page.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/jesus-is-lord-checkout.png'
+    ],
+    features: [
+      'Full e-commerce functionality with secure checkout',
+      'Curated collection of Christian-themed clothing',
+      'Custom t-shirt and apparel designs',
+      'Mobile-responsive design',
+      'Integrated inventory management',
+      'Secure payment processing',
+      'Order tracking and management',
+      'Customer account management'
+    ],
+    tags: ['E-commerce', 'Wix', 'Fashion', 'Christian', 'Family Business'],
+    link: 'https://jesusislord.uk',
+    technicalDetails: {
+      architecture: [
+        'Wix e-commerce platform',
+        'Integrated payment processing',
+        'Automated inventory management',
+        'Mobile-first responsive design',
+        'SEO optimization'
+      ],
+      technologies: [
+        'Wix Store Editor',
+        'Wix Payment Systems',
+        'Custom Design Tools',
+        'Analytics Integration',
+        'Social Media Integration'
+      ],
+      challenges: [
+        'Creating a user-friendly shopping experience',
+        'Implementing secure payment processing',
+        'Managing inventory across multiple product categories',
+        'Ensuring mobile responsiveness',
+        'Optimizing for search engines'
+      ],
+      solutions: [
+        'Utilized Wix\'s advanced e-commerce features for seamless shopping',
+        'Implemented secure payment gateways',
+        'Created an efficient inventory management system',
+        'Optimized design for all device sizes',
+        'Integrated SEO best practices'
+      ]
+    }
+  },
+  {
     id: 'software-projects',
     title: 'Software Development Projects',
     description: 'A collection of modern web applications built with React, TypeScript, and other cutting-edge technologies. These projects demonstrate my expertise in creating efficient, scalable solutions.',
@@ -74,6 +130,62 @@ export const portfolioItems: PortfolioItem[] = [
 ];
 
 export const archivedItems: PortfolioItem[] = [
+  {
+    id: 'rcce-demo-app',
+    title: 'RCCE Church Demo App',
+    shortDescription: 'A web-based demonstration of a potential mobile app replacement for RCCE church, showcasing modern features and improved user experience.',
+    description: 'A comprehensive web application demo created as a prototype for RCCE church\'s mobile app replacement. This demo showcases various features including live streaming, sermon archives, event calendar, and social media integration, all designed to enhance the church community\'s digital experience.',
+    primaryImage: 'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/rcce-demo-app-home-page.png',
+    imageUrls: [
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/rcce-demo-app-home-page.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/rcce-demo-app-live-stream-page.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/rcce-demo-app-home-sermons-page.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/rcce-demo-app-calendar.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/rcce-demo-app-connect-page.png'
+    ],
+    features: [
+      'Interactive home page with quick access to key features',
+      'Live streaming integration for church services',
+      'Sermon archive with search and filtering capabilities',
+      'Dynamic calendar for church events and activities',
+      'Social media integration and community connection features',
+      'Mobile-responsive design for all devices',
+      'Modern user interface with intuitive navigation'
+    ],
+    tags: ['React', 'TypeScript', 'Church App', 'Live Streaming', 'Mobile-First'],
+    link: 'https://elegant-dragon-d33315.netlify.app',
+    technicalDetails: {
+      architecture: [
+        'React with TypeScript for robust frontend development',
+        'Mobile-first responsive design',
+        'Component-based architecture',
+        'Modern state management',
+        'Progressive Web App capabilities'
+      ],
+      technologies: [
+        'React 18',
+        'TypeScript',
+        'TailwindCSS',
+        'Video streaming integration',
+        'Calendar API integration'
+      ],
+      challenges: [
+        'Creating a seamless mobile-first experience',
+        'Implementing efficient video streaming',
+        'Building an intuitive event calendar system',
+        'Ensuring fast load times and performance',
+        'Maintaining consistent design across all pages'
+      ],
+      solutions: [
+        'Utilized modern React patterns for optimal performance',
+        'Implemented responsive design principles',
+        'Created modular components for maintainability',
+        'Optimized media loading and caching',
+        'Integrated progressive loading techniques'
+      ]
+    },
+    archived: true
+  },
   {
     id: 'legacy-project',
     title: 'Legacy Project',
