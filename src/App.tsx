@@ -6,6 +6,7 @@ import { About } from './pages/About';
 import { Portfolio } from './pages/Portfolio';
 import { Archive } from './pages/Archive.tsx';
 import { Contact } from './pages/Contact';
+import { CharityWork } from './pages/CharityWork';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/archive" element={<Archive />} />
             <Route path="/archive/:id" element={<Archive />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/charity-work" element={<CharityWork />} />
           </Routes>
         </main>
       </div>
