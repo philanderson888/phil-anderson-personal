@@ -9,6 +9,7 @@ export function Navigation() {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/portfolio', label: 'Portfolio' },
+    { path: '/charity-work', label: 'Charity Work' },
     { path: '/contact', label: 'Contact' }
   ];
 
@@ -45,6 +46,7 @@ export function Navigation() {
               onClick={() => setIsOpen(!isOpen)}
               className="text-warm-600 hover:text-warm-900"
               aria-label="Toggle menu"
+              aria-expanded={isOpen ? true : false}
             >
               <Menu size={24} />
             </button>
