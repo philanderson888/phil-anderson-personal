@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Instagram, Linkedin, Calendar, Music, Heart, Dumbbell, Church, Users, GraduationCap } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function About() {
   return (
@@ -81,15 +82,19 @@ export function About() {
             </div>
           </div>
 
-          {/* Charity Work */}
-          <div className="bg-warm-50 rounded-lg p-6 mt-8">
+          {/* Charity Work Link */}
+          <Link 
+            to="/charity-work" 
+            className="block bg-warm-50 rounded-lg p-6 mt-8 hover:bg-warm-100 transition-colors"
+          >
             <h3 className="text-xl font-semibold text-warm-800 mb-3">Charity Work</h3>
-            <ul className="space-y-2 text-warm-600">
-              <li>• Street pastors</li>
-              <li>• Food bank support</li>
-              <li>• Supporting the persecuted church in poverty-stricken regions</li>
-            </ul>
-          </div>
+            <p className="text-warm-600 mb-4">
+              Explore my involvement in various charitable initiatives, both locally and internationally.
+            </p>
+            <div className="text-warm-600 hover:text-warm-800">
+              Learn more about my charity work →
+            </div>
+          </Link>
         </div>
 
         {/* Social Links */}
