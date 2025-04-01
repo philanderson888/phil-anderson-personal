@@ -7,6 +7,29 @@ export function CharityWork() {
       name: "Visit Churches",
       description: "Helps maintain and conserve Britain's historic churches",
       url: "https://visitchurches.org.uk"
+    },
+    {
+      name: "Christian Concern",
+      description: "Engages on a wide range of issues which affect UK society",
+      url: "https://christianconcern.com/issues"
+    }
+  ];
+
+  const localInitiatives = [
+    {
+      name: "Street Pastors",
+      description: "Supporting vulnerable people in urban areas",
+      url: "https://www.streetpastors.org"
+    },
+    {
+      name: "Food Bank Aid",
+      description: "Helping local communities in need",
+      url: "https://foodbankaid.org.uk/what-we-do/"
+    },
+    {
+      name: "North Enfield Food Bank",
+      description: "Local food bank serving the North Enfield community",
+      url: "https://northenfield.foodbank.org.uk"
     }
   ];
 
@@ -32,10 +55,25 @@ export function CharityWork() {
         <div className="space-y-6">
           <div>
             <h3 className="text-xl font-medium text-warm-800 mb-4">Local Initiatives</h3>
-            <ul className="space-y-3 text-warm-600">
-              <li>• Street pastors - Supporting vulnerable people in urban areas</li>
-              <li>• Food bank support - Helping local communities in need</li>
-            </ul>
+            <div className="space-y-4">
+              {localInitiatives.map((initiative, index) => (
+                <a
+                  key={index}
+                  href={initiative.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-4 bg-warm-50 rounded-lg hover:bg-warm-100 transition-colors"
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h4 className="font-medium text-warm-900">{initiative.name}</h4>
+                      <p className="text-warm-600 text-sm mt-1">{initiative.description}</p>
+                    </div>
+                    <ExternalLink className="text-warm-600" size={20} />
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
 
           <div>
