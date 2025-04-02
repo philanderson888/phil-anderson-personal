@@ -50,7 +50,7 @@ src/
 
 ### Deployment
 
-The site is deployed on Netlify with continuous deployment from the main branch.
+The site is deployed on Netlify directly from Bolt, with continuous deployment from the main branch.
 
 Live site: [https://philanderson.uk](https://philanderson.uk)
 

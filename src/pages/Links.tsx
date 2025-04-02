@@ -1,0 +1,145 @@
+import React from 'react';
+import { ExternalLink } from 'lucide-react';
+
+export function Links() {
+  const aiTools = [
+    {
+      name: "RunwayML",
+      description: "Professional AI video and image generation platform. $15/month subscription.",
+      url: "https://runwayml.com",
+      tags: ["Video Generation", "Image Generation"]
+    }
+  ];
+
+  const webTools = [
+    {
+      name: "SEO Tag Inspector",
+      description: "Analyzes websites and provides comprehensive reports on SEO improvements.",
+      url: "https://seo-tag-inspector.replit.app",
+      tags: ["SEO", "Website Analysis", "Optimization"]
+    }
+  ];
+
+  const clothingLinks = [
+    {
+      name: "ASICS GEL-CUMULUS 27",
+      description: "High-performance running shoes with GEL cushioning technology for maximum comfort.",
+      url: "https://www.asics.com/gb/en-gb/gel-cumulus-27/p/1011B960-001.html?size=11.5&width=Standard",
+      tags: ["Running", "Shoes", "Athletic Wear"]
+    }
+  ];
+
+  return (
+    <div className="max-w-4xl mx-auto space-y-12">
+      <h1 className="text-3xl font-bold text-warm-900">Useful Links</h1>
+
+      {/* AI Tools Section */}
+      <section className="bg-white rounded-lg shadow-sm p-8">
+        <h2 className="text-2xl font-semibold text-warm-800 mb-6">AI Tools</h2>
+        <div className="grid gap-6">
+          {aiTools.map((tool, index) => (
+            <a
+              key={index}
+              href={tool.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block p-6 bg-warm-50 rounded-lg hover:bg-warm-100 transition-colors border border-warm-200"
+            >
+              <div className="flex items-start justify-between">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-xl font-medium text-warm-900">{tool.name}</h3>
+                    <ExternalLink className="text-warm-600" size={16} />
+                  </div>
+                  <p className="text-warm-600">{tool.description}</p>
+                  <div className="flex gap-2 mt-2">
+                    {tool.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-3 py-1 bg-warm-100 text-warm-700 rounded-full text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* Web Tools Section */}
+      <section className="bg-white rounded-lg shadow-sm p-8">
+        <h2 className="text-2xl font-semibold text-warm-800 mb-6">Website Optimization Tools</h2>
+        <div className="grid gap-6">
+          {webTools.map((tool, index) => (
+            <a
+              key={index}
+              href={tool.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block p-6 bg-warm-50 rounded-lg hover:bg-warm-100 transition-colors border border-warm-200"
+            >
+              <div className="flex items-start justify-between">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-xl font-medium text-warm-900">{tool.name}</h3>
+                    <ExternalLink className="text-warm-600" size={16} />
+                  </div>
+                  <p className="text-warm-600">{tool.description}</p>
+                  <div className="flex gap-2 mt-2">
+                    {tool.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-3 py-1 bg-warm-100 text-warm-700 rounded-full text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* Clothing Section */}
+      <section className="bg-white rounded-lg shadow-sm p-8">
+        <h2 className="text-2xl font-semibold text-warm-800 mb-6">Clothing & Footwear</h2>
+        <div className="grid gap-6">
+          {clothingLinks.map((item, index) => (
+            <a
+              key={index}
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block p-6 bg-warm-50 rounded-lg hover:bg-warm-100 transition-colors border border-warm-200"
+            >
+              <div className="flex items-start justify-between">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-xl font-medium text-warm-900">{item.name}</h3>
+                    <ExternalLink className="text-warm-600" size={16} />
+                  </div>
+                  <p className="text-warm-600">{item.description}</p>
+                  <div className="flex gap-2 mt-2">
+                    {item.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-3 py-1 bg-warm-100 text-warm-700 rounded-full text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
