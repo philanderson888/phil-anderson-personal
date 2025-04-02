@@ -1,216 +1,213 @@
-import { Link, useParams } from 'react-router-dom';
-import { ExternalLink, Github, CheckCircle2, ArrowRight, Archive } from 'lucide-react';
-import { portfolioItems } from '../data/portfolio';
+import { PortfolioItem } from '../types/portfolio';
 
-function PortfolioCard({ item }: { item: typeof portfolioItems[0] }) {
-  return (
-    <Link 
-      to={`/portfolio/${item.id}`}
-      className="block bg-white rounded-lg shadow-sm p-6 transition-all duration-300 hover:shadow-md border border-warm-200"
-    >
-      {item.primaryImage && (
-        <div className="mb-4 overflow-hidden rounded-lg">
-          <img
-            src={item.primaryImage}
-            alt={item.title}
-            className="w-full h-48 object-cover transform transition-transform duration-300 hover:scale-105"
-          />
-        </div>
-      )}
-      <h3 className="text-xl font-semibold text-warm-900 mb-2">
-        {item.title}
-      </h3>
-      <p className="text-warm-600 mb-4">
-        {item.shortDescription || item.description}
-      </p>
-      <div className="flex flex-wrap gap-2 mb-4">
-        {item.tags.slice(0, 3).map((tag) => (
-          <span
-            key={tag}
-            className="px-3 py-1 bg-warm-100 text-warm-700 rounded-full text-sm"
-          >
-            {tag}
-          </span>
-        ))}
-        {item.tags.length > 3 && (
-          <span className="px-3 py-1 bg-warm-100 text-warm-700 rounded-full text-sm">
-            +{item.tags.length - 3} more
-          </span>
-        )}
-      </div>
-      <div className="flex items-center text-warm-600 hover:text-warm-900">
-        <span>View Details</span>
-        <ArrowRight size={16} className="ml-2" />
-      </div>
-    </Link>
-  );
-}
-
-function PortfolioDetail() {
-  const { id } = useParams();
-  const item = portfolioItems.find(item => item.id === id);
-
-  if (!item) {
-    return <div>Project not found</div>;
+export const portfolioItems: PortfolioItem[] = [
+  {
+    id: 'street-patrol',
+    title: 'Street Patrol',
+    shortDescription: 'A comprehensive web application for managing street patrols with real-time tracking and analytics.',
+    description: 'A comprehensive web application for managing street patrols, built with React and TypeScript. Features include real-time patrol tracking, detailed statistics, contact matrix reporting, and extensive data export capabilities.',
+    primaryImage: 'https://portfolio-street-patrol.s3.us-east-1.amazonaws.com/street-patrol-app-landing-page.png',
+    imageUrls: [
+      'https://portfolio-street-patrol.s3.us-east-1.amazonaws.com/street-patrol-app-landing-page.png',
+      'https://portfolio-street-patrol.s3.us-east-1.amazonaws.com/street-patrol-new-patrol.png',
+      'https://portfolio-street-patrol.s3.us-east-1.amazonaws.com/street-patrol-patrol-history.png',
+      'https://portfolio-street-patrol.s3.us-east-1.amazonaws.com/street-patrol-reports.png',
+      'https://portfolio-street-patrol.s3.us-east-1.amazonaws.com/street-patrol-patrol-notes.png',
+      'https://portfolio-street-patrol.s3.us-east-1.amazonaws.com/street-patrol-export-options.png'
+    ],
+    features: [
+      'Real-time patrol management with active patrol tracking',
+      'Comprehensive statistics and reporting system',
+      'Monthly, quarterly, and annual report generation',
+      'Contact matrix for demographic tracking',
+      'Detailed notes system for each patrol',
+      'Export functionality to CSV, HTML, and PDF formats',
+      'Team management with leader and member tracking',
+      'Police CAD number integration'
+    ],
+    tags: ['React', 'TypeScript', 'Supabase', 'Real-time', 'Data Analytics'],
+    link: 'https://street-patrol.netlify.app/',
+    githubUrl: 'https://github.com/philanderson/street-patrol',
+    technicalDetails: {
+      architecture: [
+        'React for frontend UI components',
+        'TypeScript for type-safe development',
+        'Supabase for real-time database and authentication',
+        'TailwindCSS for responsive styling',
+        'React Router for client-side routing'
+      ],
+      technologies: [
+        'React 18 with hooks for state management',
+        'TypeScript for enhanced developer experience',
+        'Supabase real-time subscriptions',
+        'PDF.js for report generation',
+        'Chart.js for statistical visualizations'
+      ],
+      challenges: [
+        'Real-time synchronization of patrol data',
+        'Complex statistical calculations and reporting',
+        'Offline data persistence',
+        'User authentication and authorization'
+      ],
+      solutions: [
+        'Implemented Supabase real-time subscriptions for live updates',
+        'Created a robust caching system for offline functionality',
+        'Developed a comprehensive reporting engine',
+        'Built a flexible authentication system with role-based access'
+      ]
+    }
+  },
+  {
+    id: 'jesus-is-lord',
+    title: 'Jesus Is Lord - Christian Clothing Store',
+    shortDescription: 'A modern e-commerce platform offering Christian-themed clothing and accessories, built in collaboration with family.',
+    description: 'Jesus Is Lord is a faith-focused clothing store that combines style with Christian values. This e-commerce platform offers a curated collection of Christian-themed clothing including t-shirts, hoodies, and accessories. Built using Wix\'s advanced e-commerce capabilities, the store provides a seamless shopping experience while spreading the message of faith.',
+    primaryImage: 'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/jesus-is-lord-home-page-01.png',
+    imageUrls: [
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/jesus-is-lord-home-page-01.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/jesus-is-lord-all-products.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/jesus-is-lord-all-womens.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/jesus-is-lord-product-page.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/jesus-is-lord-checkout.png'
+    ],
+    features: [
+      'Full e-commerce functionality with secure checkout',
+      'Curated collection of Christian-themed clothing',
+      'Custom t-shirt and apparel designs',
+      'Mobile-responsive design',
+      'Integrated inventory management',
+      'Secure payment processing',
+      'Order tracking and management',
+      'Customer account management'
+    ],
+    tags: ['E-commerce', 'Wix', 'Fashion', 'Christian', 'Family Business'],
+    link: 'https://jesusislord.uk',
+    technicalDetails: {
+      architecture: [
+        'Wix e-commerce platform',
+        'Integrated payment processing',
+        'Automated inventory management',
+        'Mobile-first responsive design',
+        'SEO optimization'
+      ],
+      technologies: [
+        'Wix Store Editor',
+        'Wix Payment Systems',
+        'Custom Design Tools',
+        'Analytics Integration',
+        'Social Media Integration'
+      ],
+      challenges: [
+        'Creating a user-friendly shopping experience',
+        'Implementing secure payment processing',
+        'Managing inventory across multiple product categories',
+        'Ensuring mobile responsiveness',
+        'Optimizing for search engines'
+      ],
+      solutions: [
+        'Utilized Wix\'s advanced e-commerce features for seamless shopping',
+        'Implemented secure payment gateways',
+        'Created an efficient inventory management system',
+        'Optimized design for all device sizes',
+        'Integrated SEO best practices'
+      ]
+    }
+  },
+  {
+    id: 'software-projects',
+    title: 'Software Development Projects',
+    description: 'A collection of modern web applications built with React, TypeScript, and other cutting-edge technologies. These projects demonstrate my expertise in creating efficient, scalable solutions.',
+    tags: ['React', 'TypeScript', 'Node.js', 'Web Development'],
+    githubUrl: 'https://github.com/philanderson888',
+    features: [
+      {
+        title: 'Call-Me Contacts App',
+        description: 'A smart contact management system that helps you maintain regular communication with your contacts. The app tracks contact frequency and reminds you when it\'s time to reach out to someone.',
+        link: 'https://call-my-contacts.netlify.app',
+        features: [
+          'Track last contact date for each person',
+          'Set custom contact frequency per person',
+          'Mobile-friendly interface with direct calling capability',
+          'Random contact selection for who to call next',
+          'Sort contacts by last contacted date or alphabetically',
+          'Mark contacts as contacted with a single click',
+          'Automatic contact hiding until next due date'
+        ],
+        tags: ['React', 'TypeScript', 'Mobile Integration', 'Contact Management']
+      }
+    ]
+  },
+  {
+    id: 'technical-writing',
+    title: 'Technical Writing & Documentation',
+    description: 'Comprehensive documentation and technical guides covering various programming concepts and best practices. These resources help other developers learn and grow in their journey.',
+    tags: ['Technical Writing', 'Documentation', 'Programming Guides'],
+    link: 'https://github.com/philanderson888'
   }
+];
 
-  return (
-    <div className="space-y-8">
-      <Link 
-        to="/portfolio"
-        className="inline-flex items-center text-warm-600 hover:text-warm-900"
-      >
-        ← Back to Portfolio
-      </Link>
-      
-      <div className="bg-white rounded-lg shadow-sm p-8 border border-warm-200">
-        <h1 className="text-3xl font-bold text-warm-900 mb-6">{item.title}</h1>
-        
-        <p className="text-warm-600 text-lg mb-8">{item.description}</p>
-
-        {item.imageUrls && (
-          <div className="mb-12 grid grid-cols-1 gap-12">
-            {item.imageUrls.map((url, index) => (
-              <div key={index} className="mx-4 sm:mx-8">
-                <img
-                  src={url}
-                  alt={`${item.title} screenshot ${index + 1}`}
-                  className="rounded-lg shadow-md border border-warm-200 w-full transition-all duration-300 hover:shadow-lg"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-        )}
-
-        {item.features && (
-          <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-warm-900 mb-4">Key Features</h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {item.features.map((feature, index) => (
-                <li key={index} className="flex items-center gap-2 text-warm-600">
-                  <CheckCircle2 size={16} className="text-warm-500 flex-shrink-0" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {item.technicalDetails && (
-          <div className="space-y-8">
-            <h2 className="text-2xl font-semibold text-warm-900 mb-4">Technical Details</h2>
-            
-            {item.technicalDetails.architecture && (
-              <div>
-                <h3 className="text-xl font-medium text-warm-800 mb-3">Architecture</h3>
-                <ul className="list-disc list-inside space-y-2 text-warm-600">
-                  {item.technicalDetails.architecture.map((detail, index) => (
-                    <li key={index}>{detail}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {item.technicalDetails.technologies && (
-              <div>
-                <h3 className="text-xl font-medium text-warm-800 mb-3">Technologies Used</h3>
-                <ul className="list-disc list-inside space-y-2 text-warm-600">
-                  {item.technicalDetails.technologies.map((tech, index) => (
-                    <li key={index}>{tech}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {item.technicalDetails.challenges && (
-              <div>
-                <h3 className="text-xl font-medium text-warm-800 mb-3">Challenges</h3>
-                <ul className="list-disc list-inside space-y-2 text-warm-600">
-                  {item.technicalDetails.challenges.map((challenge, index) => (
-                    <li key={index}>{challenge}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {item.technicalDetails.solutions && (
-              <div>
-                <h3 className="text-xl font-medium text-warm-800 mb-3">Solutions</h3>
-                <ul className="list-disc list-inside space-y-2 text-warm-600">
-                  {item.technicalDetails.solutions.map((solution, index) => (
-                    <li key={index}>{solution}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        )}
-
-        <div className="flex gap-4 mt-8">
-          {item.githubUrl && (
-            <a
-              href={item.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-warm-600 hover:text-warm-900 transition-colors"
-            >
-              <Github size={20} />
-              <span>View Source</span>
-            </a>
-          )}
-          {item.link && (
-            <a
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-warm-600 hover:text-warm-900 transition-colors"
-            >
-              <ExternalLink size={20} />
-              <span>Visit Project</span>
-            </a>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default function Portfolio() {
-  const { id } = useParams();
-  
-  if (id) {
-    return <PortfolioDetail />;
+export const archivedItems: PortfolioItem[] = [
+  {
+    id: 'rcce-demo-app',
+    title: 'RCCE Church Demo App',
+    shortDescription: 'A web-based demonstration of a potential mobile app replacement for RCCE church, showcasing modern features and improved user experience.',
+    description: 'A comprehensive web application demo created as a prototype for RCCE church\'s mobile app replacement. This demo showcases various features including live streaming, sermon archives, event calendar, and social media integration, all designed to enhance the church community\'s digital experience.',
+    primaryImage: 'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/rcce-demo-app-home-page.png',
+    imageUrls: [
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/rcce-demo-app-home-page.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/rcce-demo-app-live-stream-page.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/rcce-demo-app-home-sermons-page.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/rcce-demo-app-calendar.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/rcce-demo-app-connect-page.png'
+    ],
+    features: [
+      'Interactive home page with quick access to key features',
+      'Live streaming integration for church services',
+      'Sermon archive with search and filtering capabilities',
+      'Dynamic calendar for church events and activities',
+      'Social media integration and community connection features',
+      'Mobile-responsive design for all devices',
+      'Modern user interface with intuitive navigation'
+    ],
+    tags: ['React', 'TypeScript', 'Church App', 'Live Streaming', 'Mobile-First'],
+    link: 'https://elegant-dragon-d33315.netlify.app',
+    technicalDetails: {
+      architecture: [
+        'React with TypeScript for robust frontend development',
+        'Mobile-first responsive design',
+        'Component-based architecture',
+        'Modern state management',
+        'Progressive Web App capabilities'
+      ],
+      technologies: [
+        'React 18',
+        'TypeScript',
+        'TailwindCSS',
+        'Video streaming integration',
+        'Calendar API integration'
+      ],
+      challenges: [
+        'Creating a seamless mobile-first experience',
+        'Implementing efficient video streaming',
+        'Building an intuitive event calendar system',
+        'Ensuring fast load times and performance',
+        'Maintaining consistent design across all pages'
+      ],
+      solutions: [
+        'Utilized modern React patterns for optimal performance',
+        'Implemented responsive design principles',
+        'Created modular components for maintainability',
+        'Optimized media loading and caching',
+        'Integrated progressive loading techniques'
+      ]
+    },
+    archived: true
+  },
+  {
+    id: 'legacy-project',
+    title: 'Legacy Project',
+    description: 'A placeholder for archived projects. This section contains older work that, while no longer actively maintained, demonstrates the evolution of my development journey.',
+    tags: ['Archive', 'Legacy'],
+    archived: true
   }
-
-  return (
-    <div className="space-y-12">
-      <div className="space-y-8">
-        <h1 className="text-3xl font-bold text-warm-900">Portfolio</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {portfolioItems.map((item) => (
-            <PortfolioCard key={item.id} item={item} />
-          ))}
-        </div>
-      </div>
-
-      <div className="border-t border-warm-200 pt-12">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl font-semibold text-warm-900">Archive</h2>
-          <Link
-            to="/archive"
-            className="flex items-center gap-2 text-warm-600 hover:text-warm-900 transition-colors"
-          >
-            <Archive size={20} />
-            <span>View All Archives</span>
-          </Link>
-        </div>
-        <p className="text-warm-600 mb-8">
-          Explore my past projects and earlier work in the archive section.
-        </p>
-      </div>
-    </div>
-  );
-}
-
-export { Portfolio };
+];
