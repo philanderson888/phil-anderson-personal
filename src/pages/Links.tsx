@@ -1,7 +1,36 @@
-import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import React, { useState } from 'react';
+import { ExternalLink, Lock } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export function Links() {
+  const [passcode, setPasscode] = useState('');
+  const [showPasscodeInput, setShowPasscodeInput] = useState(false);
+  const navigate = useNavigate();
+
+  // Simple hash function (for demonstration purposes)
+  const hash = (str: string) => {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      const char = str.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash;
+    }
+    return hash;
+  };
+
+  // Hardcoded hash of "6789"
+  const correctHash = hash("6789");
+
+  const handlePasscodeSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (hash(passcode) === correctHash) {
+      navigate('/more-links');
+    } else {
+      alert('Incorrect passcode');
+      setPasscode('');
+    }
+  };
+
   const aiTools = [
     {
       name: "RunwayML",
@@ -139,6 +168,44 @@ export function Links() {
             </a>
           ))}
         </div>
+      </section>
+
+      {/* More Links Section */}
+      <section className="bg-white rounded-lg shadow-sm p-8">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-semibold text-warm-800">More Links</h2>
+          <button
+            onClick={() => setShowPasscodeInput(!showPasscodeInput)}
+            className="flex items-center gap-2 text-warm-600 hover:text-warm-900 transition-colors"
+          >
+            <Lock size={20} />
+            <span>Access More Links</span>
+          </button>
+        </div>
+
+        {showPasscodeInput && (
+          <form onSubmit={handlePasscodeSubmit} className="space-y-4">
+            <div>
+              <label htmlFor="passcode" className="block text-sm font-medium text-warm-700 mb-1">
+                Enter Passcode
+              </label>
+              <input
+                type="password"
+                id="passcode"
+                value={passcode}
+                onChange={(e) => setPasscode(e.target.value)}
+                className="w-full px-3 py-2 border border-warm-200 rounded-md focus:outline-none focus:ring-2 focus:ring-warm-500"
+                placeholder="Enter passcode to access more links"
+              />
+            </div>
+            <button
+              type="submit"
+              className="px-4 py-2 bg-warm-600 text-white rounded-md hover:bg-warm-700 transition-colors"
+            >
+              Submit
+            </button>
+          </form>
+        )}
       </section>
     </div>
   );

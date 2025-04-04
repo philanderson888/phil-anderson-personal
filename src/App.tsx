@@ -8,6 +8,7 @@ import { Archive } from './pages/Archive.tsx';
 import { Contact } from './pages/Contact';
 import { CharityWork } from './pages/CharityWork';
 import { Links } from './pages/Links';
+import { MoreLinks } from './pages/MoreLinks';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/charity-work" element={<CharityWork />} />
             <Route path="/links" element={<Links />} />
+            <Route path="/more-links" element={<MoreLinks />} />
           </Routes>
         </main>
       </div>

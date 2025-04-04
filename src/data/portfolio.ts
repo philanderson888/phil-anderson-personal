@@ -27,7 +27,7 @@ export const portfolioItems: PortfolioItem[] = [
     ],
     tags: ['React', 'TypeScript', 'Supabase', 'Real-time', 'Data Analytics'],
     link: 'https://street-patrol.netlify.app/',
-    githubUrl: 'https://github.com/philanderson888/street-patrol',
+    githubUrl: 'https://github.com/philanderson/street-patrol',
     technicalDetails: {
       architecture: [
         'React for frontend UI components',
@@ -118,7 +118,24 @@ export const portfolioItems: PortfolioItem[] = [
     title: 'Software Development Projects',
     description: 'A collection of modern web applications built with React, TypeScript, and other cutting-edge technologies. These projects demonstrate my expertise in creating efficient, scalable solutions.',
     tags: ['React', 'TypeScript', 'Node.js', 'Web Development'],
-    githubUrl: 'https://github.com/philanderson888'
+    githubUrl: 'https://github.com/philanderson888',
+    features: [
+      {
+        title: 'Call-Me Contacts App',
+        description: 'A smart contact management system that helps you maintain regular communication with your contacts. The app tracks contact frequency and reminds you when it\'s time to reach out to someone.',
+        link: 'https://call-my-contacts.netlify.app',
+        features: [
+          'Track last contact date for each person',
+          'Set custom contact frequency per person',
+          'Mobile-friendly interface with direct calling capability',
+          'Random contact selection for who to call next',
+          'Sort contacts by last contacted date or alphabetically',
+          'Mark contacts as contacted with a single click',
+          'Automatic contact hiding until next due date'
+        ],
+        tags: ['React', 'TypeScript', 'Mobile Integration', 'Contact Management']
+      }
+    ]
   },
   {
     id: 'technical-writing',
@@ -130,6 +147,64 @@ export const portfolioItems: PortfolioItem[] = [
 ];
 
 export const archivedItems: PortfolioItem[] = [
+  {
+    id: 'bridge-of-hope',
+    title: 'Bridge of Hope - Missionary Communication System',
+    shortDescription: 'A proof of concept messaging system connecting sponsors with missionaries and sponsored children through a secure, intermediary-based communication platform.',
+    description: 'A demonstration application built to facilitate secure communication between sponsors and their sponsored children through mission centers. This system provides a structured, safe environment for message exchange while maintaining appropriate oversight and intermediary involvement.',
+    primaryImage: 'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/bridge-of-hope-01-sign-in.png',
+    imageUrls: [
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/bridge-of-hope-01-sign-in.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/bridge-of-hope-02-admin-dashboard.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/bridge-of-hope-03-approval-of-new-users.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/bridge-of-hope-04-mission-center.png',
+      'https://philanderson888-public-image-s3-bucket.s3.eu-west-2.amazonaws.com/bridge-of-hope-05-communication.png'
+    ],
+    features: [
+      'Mission center registration and management',
+      'Multi-child registration system per mission center',
+      'Secure messaging system between sponsors and children',
+      'Missionary intermediary oversight',
+      'User role management and authentication',
+      'Administrative dashboard for user management',
+      'New user approval workflow',
+      'Detailed mission center profiles'
+    ],
+    tags: ['React', 'TypeScript', 'Supabase', 'Authentication', 'Messaging'],
+    link: 'https://gospel-for-asia-messaging-system.netlify.app/',
+    technicalDetails: {
+      architecture: [
+        'React with TypeScript for frontend development',
+        'Supabase for backend and authentication',
+        'Real-time messaging system',
+        'Role-based access control',
+        'Responsive design with Tailwind CSS'
+      ],
+      technologies: [
+        'React 18',
+        'TypeScript',
+        'Supabase',
+        'TailwindCSS',
+        'React Router',
+        'Real-time subscriptions'
+      ],
+      challenges: [
+        'Implementing secure communication channels',
+        'Managing complex user relationships',
+        'Ensuring appropriate access controls',
+        'Building an intuitive user approval system',
+        'Creating a scalable messaging infrastructure'
+      ],
+      solutions: [
+        'Developed a role-based messaging system',
+        'Implemented strict access controls and user verification',
+        'Created an efficient approval workflow',
+        'Built a user-friendly interface for all user types',
+        'Established secure communication protocols'
+      ]
+    },
+    archived: true
+  },
   {
     id: 'rcce-demo-app',
     title: 'RCCE Church Demo App',
